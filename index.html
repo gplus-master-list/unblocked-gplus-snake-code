@@ -3,173 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Snake Game - Unblocked GPlus</title>
+    <title>Unblocked Games G Plus - Play Snake Game Online</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; overflow-x: hidden; background: #000; color: #fff; }
-        #gameCanvas { display: block; width: 100vw; height: 80vh; }
-        #scoreboard { position: fixed; top: 20px; left: 20px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 15px; padding: 15px 25px; z-index: 100; }
-        #score { font-size: 28px; font-weight: bold; color: #667eea; }
-        #gameOverModal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
-        #gameOverModal.show { display: flex; }
-        .modal-content { background: rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; text-align: center; }
-        #restartBtn { background: #667eea; border: none; color: white; padding: 10px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; }
+        body { 
+            text-align: center; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #121212; 
+            color: #eeeeee; 
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: auto; }
+        canvas { 
+            border: 8px solid #4CAF50; 
+            background: #000; 
+            display: block; 
+            margin: 20px auto; 
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            border-radius: 5px;
+        }
+        h1 { color: #4CAF50; margin-bottom: 5px; }
+        p { font-size: 18px; line-height: 1.6; }
         
-        /* Article Section */
-        .article-container { max-width: 800px; margin: 20px auto; padding: 20px; background: #111; border-radius: 10px; line-height: 1.6; }
-        .backlink-box { text-align: center; margin-bottom: 20px; padding: 15px; border: 2px dashed #667eea; }
-        .backlink-box a { color: #667eea; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
-        .backlink-box a:hover { text-decoration: underline; }
+        /* Better Article Styling */
+        .article-section {
+            text-align: left;
+            background: #1e1e1e;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border-left: 5px solid #4CAF50;
+        }
+        .article-section h2 { color: #4CAF50; margin-top: 0; }
+        
+        /* Premium Button Link */
+        .backlink-box { 
+            background: #2a2a2a; 
+            padding: 25px; 
+            border-radius: 15px; 
+            margin-top: 25px;
+            border: 2px dashed #4CAF50;
+        }
+        .cta-button { 
+            display: inline-block;
+            background: #4CAF50; 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 22px; 
+            border-radius: 50px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .cta-button:hover { background: #45a049; transform: scale(1.05); }
     </style>
 </head>
 <body>
-    <div id="scoreboard">
-        <h2 style="font-size: 12px; opacity: 0.7;">SCORE</h2>
-        <div id="score">0</div>
+
+<div class="container">
+    <h1>🐍 Snake Game - Unblocked G+</h1>
+    <p>Eat the red apples to grow bigger! Don't hit the walls.</p>
+
+    <canvas id="snakeGame" width="400" height="400"></canvas>
+
+    <div class="backlink-box">
+        <h3>🚀 Want to Play More Awesome Games?</h3>
+        <p>We have a huge list of unblocked games waiting for you!</p>
+        <a href="https://unblockedgamesgplus.games/" class="cta-button">👉 Play More Games Here 👈</a>
     </div>
 
-    <div id="gameOverModal">
-        <div class="modal-content">
-            <h1>Game Over</h1>
-            <p>Final Score: <span id="finalScore">0</span></p>
-            <button id="restartBtn">Play Again</button>
-        </div>
-    </div>
-
-    <div id="container"></div>
-
-    <div class="article-container">
-        <div class="backlink-box">
-            <p>Want more fun?</p>
-            <a href="https://unblockedgamesgplus.games/">Play More Unblocked Games G Plus</a>
-        </div>
+    <div class="article-section">
+        <h2>What is the Snake Game?</h2>
+        <p>The Snake Game is a classic fun game where you control a hungry snake. Your goal is simple: eat as many red apples as you can. Every time you eat an apple, you grow longer! But be careful—if you hit the walls or bite your own tail, the game is over.</p>
         
-        <h3>Why Play 3D Snake Game?</h3>
-        <p>
-            Welcome to the modern version of the classic Snake game! Unlike the old 2D style, this 3D version gives you a cool neon look and smooth movements. It is specially designed for students and workers who want a quick break. 
-        </p>
-        <p>
-            Our <strong>Unblocked GPlus</strong> version works everywhere, even on school or office networks. Just use your arrow keys to guide the glowing snake and eat the red apples. As you eat more, the snake grows and the speed increases. Challenge your friends and see who gets the highest score in this shiny 3D world!
-        </p>
+        <h2>Why Play on Unblocked Games G Plus?</h2>
+        <p>Many times, school or office computers block fun websites. That's why <b>Unblocked Games G Plus</b> is here! We make sure you can enjoy your favorite games like Snake, 3D games, and puzzles anytime, anywhere. Our games are fast, free, and super easy to play right in your browser.</p>
+        
+        <p>Whether you are 10 years old or a grown-up, this game is a great way to relax and test your speed. Can you get the highest score today?</p>
     </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        // Game state
-        let scene, camera, renderer, gameInterval;
-        let snake = [];
-        let direction = { x: 1, z: 0 };
-        let nextDirection = { x: 1, z: 0 };
-        let food = null;
-        let gridSize = 20;
-        let score = 0;
-        let gameRunning = true;
+<script>
+    const canvas = document.getElementById("snakeGame");
+    const ctx = canvas.getContext("2d");
+    let box = 20;
+    let snake = [{x: 10 * box, y: 10 * box}];
+    let food = { x: Math.floor(Math.random()*19+1)*box, y: Math.floor(Math.random()*19+1)*box };
+    let d;
 
-        function init() {
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x050505);
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / (window.innerHeight * 0.8), 0.1, 1000);
-            camera.position.set(0, 15, 15);
-            camera.lookAt(0, 0, 0);
+    document.addEventListener("keydown", direction);
+    function direction(event) {
+        if(event.keyCode == 37 && d != "RIGHT") d = "LEFT";
+        else if(event.keyCode == 38 && d != "DOWN") d = "UP";
+        else if(event.keyCode == 39 && d != "LEFT") d = "RIGHT";
+        else if(event.keyCode == 40 && d != "UP") d = "DOWN";
+    }
 
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight * 0.8);
-            document.getElementById('container').appendChild(renderer.domElement);
-
-            const light = new THREE.PointLight(0x667eea, 1, 100);
-            light.position.set(0, 10, 0);
-            scene.add(light);
-            scene.add(new THREE.AmbientLight(0x404040));
-
-            const grid = new THREE.GridHelper(gridSize, gridSize, 0x222222, 0x111111);
-            scene.add(grid);
-
-            initSnake();
-            createFood();
-            window.addEventListener('keydown', handleKeyPress);
-            document.getElementById('restartBtn').addEventListener('click', restartGame);
-            
-            gameLoop();
-            startGameTimer();
+    function draw() {
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        for(let i=0; i<snake.length; i++) {
+            ctx.fillStyle = (i == 0) ? "#4CAF50" : "#8bc34a";
+            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(snake[i].x, snake[i].y, box, box);
         }
-
-        function initSnake() {
-            snake.forEach(s => scene.remove(s));
-            snake = [];
-            for (let i = 0; i < 3; i++) {
-                const seg = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.9, 0.9), new THREE.MeshStandardMaterial({ color: i===0?0x667eea:0x764ba2, emissive: i===0?0x667eea:0x764ba2 }));
-                seg.position.set(-i, 0, 0);
-                snake.push(seg);
-                scene.add(seg);
-            }
+        ctx.fillStyle = "#ff5252";
+        ctx.fillRect(food.x, food.y, box, box);
+        
+        let snakeX = snake[0].x;
+        let snakeY = snake[0].y;
+        if( d == "LEFT") snakeX -= box;
+        if( d == "UP") snakeY -= box;
+        if( d == "RIGHT") snakeX += box;
+        if( d == "DOWN") snakeY += box;
+        
+        if(snakeX == food.x && snakeY == food.y) {
+            food = { x: Math.floor(Math.random()*19+1)*box, y: Math.floor(Math.random()*19+1)*box };
+        } else { snake.pop(); }
+        
+        let newHead = {x: snakeX, y: snakeY};
+        if(snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height) {
+            clearInterval(game);
+            alert("Game Over! Refresh to try again.");
+            location.reload();
         }
+        snake.unshift(newHead);
+    }
+    let game = setInterval(draw, 100);
+</script>
 
-        function createFood() {
-            if (food) scene.remove(food);
-            food = new THREE.Mesh(new THREE.SphereGeometry(0.4, 16, 16), new THREE.MeshStandardMaterial({ color: 0xff4444, emissive: 0xff0000 }));
-            food.position.set(Math.floor(Math.random()*gridSize)-gridSize/2, 0, Math.floor(Math.random()*gridSize)-gridSize/2);
-            scene.add(food);
-        }
-
-        function handleKeyPress(e) {
-            const key = e.key.toLowerCase();
-            if ((key === 'arrowup' || key === 'w') && direction.z !== 1) nextDirection = { x: 0, z: -1 };
-            if ((key === 'arrowdown' || key === 's') && direction.z !== -1) nextDirection = { x: 0, z: 1 };
-            if ((key === 'arrowleft' || key === 'a') && direction.x !== 1) nextDirection = { x: -1, z: 0 };
-            if ((key === 'arrowright' || key === 'd') && direction.x !== -1) nextDirection = { x: 1, z: 0 };
-        }
-
-        function moveSnake() {
-            if (!gameRunning) return;
-            direction = nextDirection;
-            const head = snake[0];
-            const newPos = { x: head.position.x + direction.x, z: head.position.z + direction.z };
-
-            if (Math.abs(newPos.x) > gridSize/2 || Math.abs(newPos.z) > gridSize/2 || snake.some((s,i) => i!==0 && s.position.x === newPos.x && s.position.z === newPos.z)) {
-                gameRunning = false;
-                document.getElementById('finalScore').textContent = score;
-                document.getElementById('gameOverModal').classList.add('show');
-                return;
-            }
-
-            const newHead = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.9, 0.9), new THREE.MeshStandardMaterial({ color: 0x667eea, emissive: 0x667eea }));
-            newHead.position.set(newPos.x, 0, newPos.z);
-            snake[0].material.color.set(0x764ba2);
-            snake.unshift(newHead);
-            scene.add(newHead);
-
-            if (Math.round(newPos.x) === Math.round(food.position.x) && Math.round(newPos.z) === Math.round(food.position.z)) {
-                score += 10;
-                document.getElementById('score').textContent = score;
-                createFood();
-            } else {
-                const tail = snake.pop();
-                scene.remove(tail);
-            }
-        }
-
-        function startGameTimer() {
-            gameInterval = setInterval(moveSnake, 150);
-        }
-
-        function restartGame() {
-            score = 0;
-            document.getElementById('score').textContent = "0";
-            document.getElementById('gameOverModal').classList.remove('show');
-            direction = { x: 1, z: 0 };
-            nextDirection = { x: 1, z: 0 };
-            initSnake();
-            createFood();
-            gameRunning = true;
-        }
-
-        function gameLoop() {
-            requestAnimationFrame(gameLoop);
-            if(food) food.rotation.y += 0.05;
-            renderer.render(scene, camera);
-        }
-
-        init();
-    </script>
 </body>
 </html>
